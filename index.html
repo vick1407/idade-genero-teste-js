@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>idade teste</title>
+</head>
+<link rel="stylesheet" href="estilos/style.css">
+<body>
+<header>
+    <h1>
+        Faixa etária:
+    </h1>
+</header>
+    <main>
+    <div id="divIdade">
+        <h2>Preencha os campos:</h2>
+       <p id="idadep">Qual o ano do seu nascimento?</p> <input type="number" id="AnoNasc" name="AnoNasc"> 
+       <p id="sexop">Qual seu gênero?</p> <input type="radio" id="genero-fem" name="genero">
+        <label for="genero-fem">Feminino</label>
+        <input type="radio" id="genero" name="genero">
+        <label for="genero">Masculino</label> <br>
+        <input type="button" value="Verificar" id="verificar" onclick="clicar()">
+        <div id="resultado"></div>
+        <div id="resultado2"></div>
+    </div>
+</main>
+    <script>
+
+function clicar() {
+            var dataAtual = new Date();
+            var anoAtual = dataAtual.getFullYear();
+            var anoNasc = document.getElementById('AnoNasc').value;
+            var resultado = document.getElementById('resultado');
+            var resultado2 = document.getElementById('resultado2');
+            var generoFem = document.getElementById('genero-fem');
+            var generoMasc = document.getElementById('genero');
+
+            
+            var divIdade = document.getElementById('divIdade');
+
+            // Limpa as mensagens anteriores
+            resultado.innerHTML = '';
+            resultado2.innerHTML = '';
+
+            // Validação do ano de nascimento
+            if (anoNasc === '' || isNaN(anoNasc) || Number(anoNasc) > anoAtual) {
+                resultado.innerHTML = `<p>Digite um ano de nascimento válido.</p>`;
+                divIdade.style.height = '350px';
+                return;
+            }
+
+            // Validação do gênero
+            if (!generoFem.checked && !generoMasc.checked) {
+                resultado2.innerHTML = `<p>Selecione um gênero.</p>`;
+                divIdade.style.height = '350px';
+                return;
+            }
+
+            var idade = anoAtual - Number(anoNasc);
+            divIdade.style.height = '650px';
+
+            if (generoFem.checked) {
+
+                if (idade >= 13 && idade < 18) {
+                    resultado.innerHTML = `<p>Você é uma menina adolescente que tem ou fará ${idade} anos</p>`;
+                    resultado.innerHTML += `<img src="img/menina-adolescente.jpg" alt="">`;
+                } else if (idade >= 18 && idade < 25) {
+                    resultado.innerHTML = `<p>Você é uma mulher jovem que tem ou fará ${idade} anos</p>`;
+                    resultado.innerHTML += `<img src="img/menina-jovem.jpg" alt="">`;
+                } else if (idade > 2 && idade <13 ) {
+                    resultado.innerHTML = `<p>Você é uma criança que tem ou fará ${idade} anos</p>`;
+                    resultado.innerHTML += `<img src="img/menina-criança.jpg" alt="">`;
+                } else if (idade >=0 && idade <2) {
+                    resultado.innerHTML = `<p>Você é um bebê que tem ou fará 1 ano</p>`;
+                    resultado.innerHTML += `<img src="img/menina-bebe.jpg" alt="">`;
+                } else if (idade >= 25 && idade < 60) {
+                    resultado.innerHTML = `<p>Você é uma mulher adulta que tem ou fará ${idade} anos</p>`;
+                    resultado.innerHTML += `<img src="img/mulher-adulta.jpg" alt="">`;
+                }
+                else if (idade >= 2 && idade <13 ) {
+                    resultado.innerHTML = `<p>Você é uma criança que tem ou fará ${idade} anos</p>`;
+                    resultado.innerHTML += `<img src="img/menina-criança.jpg" alt="">`;
+                } else {
+                    resultado.innerHTML = `<p>Você é uma mulher idosa que tem ou fará ${idade} anos</p>`;
+                    resultado.innerHTML += `<img src="img/mulher-idosa.jpg" alt="">`;
+                }
+            } else {
+                if (idade >= 13 && idade < 18) {
+                    resultado.innerHTML = `<p>Você é um menino adolescente que tem ou fará ${idade} anos</p>`;
+                    resultado.innerHTML += `<img src="img/menino-adolescente.jpg" alt="">`;
+                } else if (idade >= 18 && idade < 25) {
+                    resultado.innerHTML = `<p>Você é um homem jovem que tem ou fará ${idade} anos</p>`;
+                    resultado.innerHTML += `<img src="img/homem-jovem.jpg" alt="">`;
+                } else if (idade >= 25 && idade < 60) {
+                    resultado.innerHTML = `<p>Você é um homem adulto que tem ou fará ${idade} anos</p>`;
+                    resultado.innerHTML += `<img src="img/homem-adulto.jpg" alt="">`;
+                }
+                else if (idade >= 2 && idade <13 ) {
+                    resultado.innerHTML = `<p>Você é uma criança que tem ou fará ${idade} anos</p>`;
+                    resultado.innerHTML += `<img src="img/menino-criança.jpg" alt="">`;
+                } else if (idade >= 0 && idade<=1) {
+                    resultado.innerHTML = `<p>Você é um bebê que tem ou fará 1 ano</p>`;
+                    resultado.innerHTML += `<img src="img/menino-bebe.jpg" alt="">`;
+                }
+                
+                else {
+                    resultado.innerHTML = `<p>Você é um homem idoso que tem ou fará ${idade} anos</p>`;
+                    resultado.innerHTML += `<img src="img/homem-idoso.jpg" alt="">`;
+                }
+        }
+    }
+        
+    </script>
+</body>
+</html>

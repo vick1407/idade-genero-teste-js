@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+    text-align: center;
+    padding: 10px;
+    font-size: 3em;
+    color: white;
+}
+h2 {
+    font-size: 2em;
+    text-align: center;
+    padding: 20px;
+    color: rgb(61, 91, 131);
+}
+p#idadep, p#sexop {
+    margin-left: 30px;
+    font-size: 1.5em;
+}
+p {
+    padding: 10px;
+    font-size: 1.3em;
+    color: rgb(61, 91, 131);
+}
+#divIdade {
+    margin: auto;
+    width: 50vw;
+    height: 50vh;
+    background-color: white;
+    position: relative;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.425);
+}
+img {
+    margin-top: 20px;
+    width: 250px; /* Ajuste o tamanho conforme necessário */
+    height: 250px; /* Ajuste o tamanho conforme necessário */
+    border-radius: 50%; /* Isso cria um círculo perfeito */
+    overflow: hidden; /* Isso garante que a imagem fique dentro do círculo */
+}
+body {
+    background-color: rgb(61, 91, 131);
+}
+#AnoNasc {
+    margin-left: 40px;
+    height: 5vh;
+    border-radius: 10px;
+    outline: none;
+    border-style: none;
+    border: solid 2px;
+    border-color: rgb(61, 91, 131);
+    width: 150px;
+    font-size: 20px;
+    text-align: center;
+}
+#verificar {
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    outline: none;
+    border-style: none;
+    border: solid 2px;
+    border-color: rgb(61, 91, 131);
+    width: 150px;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: white;
+    color: rgb(61, 91, 131);
+    font-weight: bolder;
+    margin-top: 20px;
+}
+#verificar:hover {
+    background-color: rgb(61, 91, 131);
+    color: white;
+}
+label {
+    color: rgb(61, 91, 131);
+    font-size: 20px;
+    padding-right: 10px;
+}
+#genero-fem {
+    margin-left: 40px;
+}
+#resultado, #resultado2 {
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 1em;
+    }
+    #AnoNasc {
+        width: 140px;
+    }
+    label {
+        font-size: 16px;
+    }
+    #divIdade {
+        width: 80vw;
+        height: auto;
+    }
+    img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    p {
+        font-size: 1.2em;
+    }
+    #AnoNasc {
+        width: 160px;
+    }
+    label {
+        font-size: 18px;
+    }
+    #divIdade {
+        width: 70vw;
+        height: auto;
+    }
+    img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+    h1 {
+        font-size: 3em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1.3em;
+    }
+    #AnoNasc {
+        width: 180px;
+    }
+    label {
+        font-size: 20px;
+    }
+    #divIdade {
+        width: 60vw;
+        height: auto;
+    }
+    img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (min-width: 1440px) {
+    h1 {
+        font-size: 3.5em;
+    }
+    h2 {
+        font-size: 2.5em;
+    }
+    p {
+        font-size: 1.5em;
+    }
+    #AnoNasc {
+        width: 200px;
+    }
+    label {
+        font-size: 22px;
+    }
+    #divIdade {
+        width: 50vw;
+        height: auto;
+    }
+    img {
+        width: 300px;
+        height: 300px;
+    }
+}
